@@ -1,0 +1,7 @@
+sudo adduser student
+sudo usermod -aG sudo student 
+sudo su student
+cd
+sudo login student
+whoami
+exit
