@@ -12,3 +12,8 @@ sudo iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
 sudo iptables -A FORWARD -i eth1 -j ACCEPT
 iptables -vnl -t nat 
 iptables --table nat --list 
+
+#proxy
+export https_proxy="https://145.40.99.247:3128"
+https_proxy="https://145.40.99.247:3128"
+curl http://www.example.com/
