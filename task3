@@ -1,2 +1,21 @@
 unamne -r 
-mv linux-6.1.12.tar.xz ~
+mv linux-6.1.12.tar.xz ~/Downloads/linux_kernel
+cd linux_kernel
+ls
+ls -a
+sudo apt-get install git fakeroot build-essential ncurses-dev xz-utils libssl-dev bc flex libelf-dev bison libncurses-dev rsync gcc libnc
+sudo update-grub
+cd ~/Downloads/linux_kernel/linux-6.1.12
+make oldconfig
+ls /boot/
+sudo cp arch/x86/boot/bzImage/ /boot/vmlinuz-linux
+sudo add-apt-repository ppa:cappelikan/ppa
+sudo apt update
+sudo apt install mainline
+
+
+uname -r
+uname -a
+sudo su
+lsmod
+cd /lib/modules/5.19.0-32-generic
