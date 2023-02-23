@@ -1,4 +1,7 @@
+#developement of Kernel Modules
+#checking the version of kernel
 unamne -r 
+#unzipping file 
 mv linux-6.1.12.tar.xz ~/Downloads/linux_kernel
 cd linux_kernel
 ls
@@ -11,6 +14,7 @@ ls /boot/
 sudo cp arch/x86/boot/bzImage/ /boot/vmlinuz-linux
 sudo add-apt-repository ppa:cappelikan/ppa
 sudo apt update
+#installing Linux Kernel by using mainline
 sudo apt install mainline
 
 
@@ -31,14 +35,24 @@ cd modules_ex
 touch hello.c
 touch Makefile
 nano Makefile
-
 make
 sudo insmod hello.ko
 sudo dmesg | tail
 
+#Chardev
+touch chardev.c
+nano chardev.c
+nano Makefile
+make
+sudo insmod chardev.ko
+sudo dmesg | tail
+
 #Device
+touch device.c
 nano device.c
 nano Makefile
-
-make -C /lib/modules/$(uname -r)/build M=$(pwd) modules
+make
+sudo insmod device.ko
 sudo dmesg | tail
+lsmod
+
