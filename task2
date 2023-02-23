@@ -1,11 +1,12 @@
 #direct ip
 sudo apt-get install network-manager
-sudo apt-get install dhcpcd5
 sudo apt-get install dhcp
 sudo apt-get install dhcpcd5
 ip link show 
 sudo dhcpcd enp0s3
-
+#checking by pinging
+ping example.com
+ 
 #NAT
 sudo sysctl -w net.ipv4.ip_forward=1
 sudo iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
