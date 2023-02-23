@@ -19,3 +19,14 @@ uname -a
 sudo su
 lsmod
 cd /lib/modules/5.19.0-32-generic
+ls -l
+cd kernel/
+ls -l
+
+#Modules
+cd /home/student
+mkdir modules_ex
+cd modules_ex
+touch hello.c
+touch Makefile
+nano Makefile
