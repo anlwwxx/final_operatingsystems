@@ -23,10 +23,22 @@ ls -l
 cd kernel/
 ls -l
 
-#Modules
+#Modules code for terminal, codes of modules are in separate files
+#Hello
 cd /home/student
 mkdir modules_ex
 cd modules_ex
 touch hello.c
 touch Makefile
 nano Makefile
+
+make
+sudo insmod hello.ko
+sudo dmesg | tail
+
+#Device
+nano device.c
+nano Makefile
+
+make -C /lib/modules/$(uname -r)/build M=$(pwd) modules
+sudo dmesg | tail
